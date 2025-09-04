@@ -456,7 +456,7 @@ document.getElementById("alert-9").addEventListener("click",function(e)
     }
 })
 
-// clear button removes items
+// clear button removes items one by one
 function removeAll()
 {
     document.getElementById("remove").remove();

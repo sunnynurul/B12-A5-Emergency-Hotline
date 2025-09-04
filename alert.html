@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Alert</title>
+  <style>
+    /* Modal styles */
+    #customModal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    #modalOverlay {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <!-- Modal Structure -->
+  <div id="modalOverlay"></div>
+  <div id="customModal">
+    <h5>emergency-service.netlify.app says</h5>
+    <p>This is a custom alert message!</p>
+    <button id="okButton">OK</button>
+  </div>
+
+  <script>
+    // Function to show the custom modal
+    function showCustomAlert(message) {
+      const modal = document.getElementById("customModal");
+      const overlay = document.getElementById("modalOverlay");
+      const okButton = document.getElementById("okButton");
+
+      // Set the message
+      modal.querySelector("p").textContent = message;
+
+      // Show the modal and overlay
+      modal.style.display = "block";
+      overlay.style.display = "block";
+
+      // Add event listener to the OK button
+      okButton.addEventListener("click", function handleOkClick() {
+        // Hide the modal and overlay
+        modal.style.display = "none";
+        overlay.style.display = "none";
+
+        // Remove the event listener to avoid duplicate handlers
+        okButton.removeEventListener("click", handleOkClick);
+
+        // Execute additional logic after clicking OK
+        console.log("User clicked OK!");
+      });
+    }
+
+    // Example usage
+    showCustomAlert("This is a custom alert!");
+    
+  </script>
+</body>
+</html>

@@ -19,8 +19,8 @@
              </div>
             <div class="flex justify-between gap-x-5  mr-16 mt-2 mb-2 gap-x-2">
                <button class="flex text-center justify-evenly w-20 h-10 bg-[#41ff6b] rounded-3xl mt-2"><span id="heart-num-count" class="text-bold">0</span><img class="w-6 h-6" src="./assets/heart.png"></button>
-               <button class="flex text-center justify-evenly w-20 h-10 bg-[#41ff6b] rounded-3xl mt-2"><span class="">100</span><img class="w-6 h-6" src="./assets/coin.png"></button>
-               <button class="flex text-center justify-center w-20 h-10 bg-[#00a63e] rounded-3xl text-white mt-2"><span>2</span></i>&nbspCopy</button>
+               <button class="flex text-center justify-evenly w-20 h-10 bg-[#41ff6b] rounded-3xl mt-2"><span id="star-count">100</span><img class="w-6 h-6" src="./assets/coin.png"></button>
+               <button class="flex text-center justify-center w-20 h-10 bg-[#00a63e] rounded-3xl text-white mt-2"><span id="copy-count">2</span></i>&nbspCopy</button>
             </div>
         </nav>
         <div class="bg-green-800 mt-5 mb-15">
@@ -44,8 +44,8 @@
                     <h2 class="text-2xl">9</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">A</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-1" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-1" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -62,8 +62,8 @@
                     <h2 class="text-2xl">9</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">P</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-2" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-2" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -80,8 +80,8 @@
                     <h2 class="text-2xl">999</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">Fire</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-3" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-3" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -92,8 +92,91 @@
             <div class="row-span-3 bg-[white] w-80 h-252 mt-10 mb-10 ml-10 rounded-2xl">
                  <div class="flex justify-between">
                      <h2 class="text-2xl"><i class="fa-regular fa-clock"></i>&nbspCall History</h2>
-                     <button class=" w-30 h-8 bg-[green] rounded-3xl text-white">Clear</button>
-                 </div>
+                     <button onclick="removeAll()" class=" w-30 h-8 bg-[green] rounded-3xl text-white">Clear</button>
+                 </div><br>
+                 <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title1"></h2>
+                      <p id="number1"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours1"></p><p id="current-time-minutes1"></p><p id="current-time-seconds1"></p>
+                    </div>
+                </div><br>
+                <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title2"></h2>
+                      <p id="number2"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours2"></p><p id="current-time-minutes2"></p><p id="current-time-seconds2"></p>
+                    </div>
+                </div><br>
+                <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title3"></h2>
+                      <p id="number3"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours3"></p><p id="current-time-minutes3"></p><p id="current-time-seconds3"></p>
+                    </div>
+                </div><br>
+                <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title4"></h2>
+                      <p id="number4"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours4"></p><p id="current-time-minutes4"></p><p id="current-time-seconds4"></p>
+                    </div>
+                </div><br>
+                <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title5"></h2>
+                      <p id="number5"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours5"></p><p id="current-time-minutes5"></p><p id="current-time-seconds5"></p>
+                    </div>
+                </div><br>
+                <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title6"></h2>
+                      <p id="number6"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours6"></p><p id="current-time-minutes6"></p><p id="current-time-seconds6"></p>
+                    </div>
+                </div><br>
+                <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title7"></h2>
+                      <p id="number7"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours7"></p><p id="current-time-minutes7"></p><p id="current-time-seconds7"></p>
+                    </div>
+                </div><br>
+                <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title8"></h2>
+                      <p id="number8"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours8"></p><p id="current-time-minutes8"></p><p id="current-time-seconds8"></p>
+                    </div>
+                </div><br>
+                <div id="remove" class="flex justify-between bg-[gray]">
+                    <div>
+                      <h2 id="title9"></h2>
+                      <p id="number9"></p>
+                    </div>
+                    <div class="flex">
+                      <p id="current-time-hours9"></p><p id="current-time-minutes9"></p><p id="current-time-seconds9"></p>
+                    </div>
+                </div>
+                    
+                 
             </div>
 <div class="flex justify-between bg-[white] w-80 h-70 mt-10 mb-10 ml-10 rounded-2xl">
                 <div class="ml-2">
@@ -104,8 +187,8 @@
                     <h2 class="text-2xl">1</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">H</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-4" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-4" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -122,8 +205,8 @@
                     <h2 class="text-2xl">1</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">G</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-5" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-5" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -140,8 +223,8 @@
                     <h2 class="text-2xl">1</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">E</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-6" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-6" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -158,8 +241,8 @@
                     <h2 class="text-2xl">1</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">N</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-7" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-7" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -176,8 +259,8 @@
                     <h2 class="text-2xl">1</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">T</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-8" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-8" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -194,8 +277,8 @@
                     <h2 class="text-2xl">9</h2>
                     <button class="w-10 h-8 bg-[white] border-1 rounded-2xl">A</button><br><br>
                     <div class="flex justify-between gap-x-1">
-                        <button class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
-                        <button class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
+                        <button id="copy-9" class="w-30 h-8 bg-[white] border-1 rounded-2xl"><i class="fa-regular fa-copy"></i>&nbspCopy</button>
+                        <button id="alert-9" class="w-35 h-8 bg-[green] rounded-2xl text-white"><i class="fa-solid fa-phone"></i>&nbspCall</button>
                     </div>
                 </div>
                 <div class="mr-2"><br>
@@ -204,6 +287,7 @@
                 
             </div>            
         </div>
+        
     </main>
 </body>
 </html>
